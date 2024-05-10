@@ -10,6 +10,7 @@ option go_package = "github.com/Stride-Labs/ibc-rate-limiting/ratelimit/types";
 
 // Msg service for rate limit txs
 service Msg {
+  option (cosmos.msg.v1.service) = true;
   // Gov tx to add a new rate limit
   rpc AddRateLimit(MsgAddRateLimit) returns (MsgAddRateLimitResponse);
   // Gov tx to update an existing rate limit
