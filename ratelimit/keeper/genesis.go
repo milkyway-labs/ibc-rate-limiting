@@ -11,8 +11,6 @@ import (
 // InitGenesis initializes the capability module's state from a provided genesis
 // state.
 func (k Keeper) InitGenesis(ctx sdk.Context, genState types.GenesisState) {
-	k.SetParams(ctx, genState.Params)
-
 	// Set rate limits, blacklists, and whitelists
 	for _, rateLimit := range genState.RateLimits {
 		k.SetRateLimit(ctx, rateLimit)
